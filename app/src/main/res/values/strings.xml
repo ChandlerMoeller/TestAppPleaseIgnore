@@ -8,12 +8,8 @@
     <string name="title_activity_display_message">My Message</string>
     <string name="hello_world">Hello world!</string>
 
-    <string name="str_sunday">Sunday</string>
-    <string name="str_monday">Monday</string>
-    <string name="str_tuesday">Tuesday</string>
-    <string name="str_wednesday">Wednesday</string>
-    <string name="str_thursday">Thursday</string>
-    <string name="str_friday">Friday</string>
-    <string name="str_saturday">Saturday</string>
+    //Action Bar Strings
+    <string name="str_settings">Settings</string>
+    <string name="str_about">About</string>
 
 </resources>
