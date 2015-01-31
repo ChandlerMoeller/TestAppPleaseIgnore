@@ -78,6 +78,18 @@ public class Menu {
 		}
 	}
 	
+	public ArrayList<MenuItem> getBreakfast() {
+		return breakfast;
+	}
+	
+	public ArrayList<MenuItem> getLunch() {
+		return lunch;
+	}
+	
+	public ArrayList<MenuItem> getDinner() {
+		return dinner;
+	}
+	
 	public static void main(String[] args) throws IOException {
 		Menu menu = new Menu(31, 1, 2015, NT);
 		if (menu.breakfast.size() > 0) {
