@@ -2,6 +2,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.mycompany.myfirstapp.DisplayMessageActivity">
-    <item android:id="@+id/action_settings" android:title="@string/action_settings"
+    <item android:id="@+id/str_sunday" android:title="@string/str_sunday"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/str_monday" android:title="@string/str_monday"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/str_tuesday" android:title="@string/str_tuesday"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/str_wednesday" android:title="@string/str_wednesday"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/str_thursday" android:title="@string/str_thursday"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/str_friday" android:title="@string/str_friday"
+        android:orderInCategory="100" app:showAsAction="never" />
+    <item android:id="@+id/str_saturday" android:title="@string/str_saturday"
         android:orderInCategory="100" app:showAsAction="never" />
 </menu>
