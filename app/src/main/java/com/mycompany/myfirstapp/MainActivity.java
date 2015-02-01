@@ -158,7 +158,36 @@ public class MainActivity extends ActionBarActivity {
     private class DrawerItemClickListener implements ListView.OnItemClickListener {
         @Override
         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            //////selectItem(position);
+            selectItem(position);
+        }
+    }
+
+    private void selectItem(int position) {
+        switch (position) {
+            case 0:
+                Intent diningintent = new Intent(this, DiningActivity.class);
+                startActivity(diningintent);
+                break;
+            case 1:
+                Intent myucscintent = new Intent(this, DiningActivity.class);
+                startActivity(myucscintent);
+                break;
+            case 2:
+                Intent ecommonsintent = new Intent(this, DiningActivity.class);
+                startActivity(ecommonsintent);
+                break;
+            case 3:
+                Intent campusmapintent = new Intent(this, DiningActivity.class);
+                startActivity(campusmapintent);
+                break;
+            case 4:
+                Intent busroutesintent = new Intent(this, DiningActivity.class);
+                startActivity(busroutesintent);
+                break;
+            case 5:
+                Intent eventcalendarintent = new Intent(this, DiningActivity.class);
+                startActivity(eventcalendarintent);
+                break;
         }
     }
 
