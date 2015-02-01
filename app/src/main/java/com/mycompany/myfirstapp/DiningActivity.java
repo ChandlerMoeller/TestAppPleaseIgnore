@@ -36,4 +36,6 @@ public class DiningActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
