@@ -62,7 +62,7 @@ public class MainActivity extends ActionBarActivity {
         mTitle = mDrawerTitle = getTitle();
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
-               R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close) {
+                R.drawable.ic_drawer, R.string.drawer_open, R.string.drawer_close) {
 
             /** Called when a drawer has settled in a completely closed state. */
             public void onDrawerClosed(View view) {
@@ -133,6 +133,14 @@ public class MainActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent actionintent = new Intent(this, DisplaySettingsActivity.class);
+            startActivity(actionintent);
+            return true;
+        }
+
+        if (id == R.id.action_about) {
+            Intent aboutintent = new Intent(this, DisplayAboutActivity.class);
+            startActivity(aboutintent);
             return true;
         }
 

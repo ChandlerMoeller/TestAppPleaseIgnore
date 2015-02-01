@@ -26,6 +26,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mycompany.myfirstapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".DisplaySettingsActivity"
+            android:label="@string/title_activity_display_settings"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mycompany.myfirstapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".DisplayAboutActivity"
+            android:label="@string/title_activity_display_about"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mycompany.myfirstapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
