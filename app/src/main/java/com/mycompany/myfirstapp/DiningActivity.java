@@ -1,31 +1,19 @@
 package com.mycompany.myfirstapp;
 
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
 
-public class DiningActivity extends ActionBarActivity implements ActionBar.TabListener{
+public class DiningActivity extends ActionBarActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dining);
-
-        // Set the Action Bar to use tabs for navigation
-        ActionBar ab = getSupportActionBar();
-        ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-
-        // Add three tabs to the Action Bar for display
-        ab.addTab(ab.newTab().setText("C/S").setTabListener(this));
-        ab.addTab(ab.newTab().setText("C/M").setTabListener(this));
-        ab.addTab(ab.newTab().setText("9/10").setTabListener(this));
-        ab.addTab(ab.newTab().setText("P/K").setTabListener(this));
-        ab.addTab(ab.newTab().setText("8/O").setTabListener(this));
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -47,23 +35,5 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    // Implemented from ActionBar.TabListener
-    @Override
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // This is called when a tab is selected.
-    }
-
-    // Implemented from ActionBar.TabListener
-    @Override
-    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // This is called when a previously selected tab is unselected.
-    }
-
-    // Implemented from ActionBar.TabListener
-    @Override
-    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // This is called when a previously selected tab is selected again.
     }
 }
