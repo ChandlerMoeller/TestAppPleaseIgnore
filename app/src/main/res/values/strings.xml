@@ -3,6 +3,7 @@
 
     <string name="app_name">UCSC</string>
 
+    //Navigation Drawer
     <string-array name="navigation_array">
         <item>Dining</item>
         <item>myUCSC</item>
@@ -11,9 +12,11 @@
         <item>Bus Routes</item>
         <item>Event Calendar</item>
     </string-array>
-
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
+
+    //HomePage
+    <string name="str_welcome">Welcome to the UCSC unofficial app!</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="title_activity_main">MainActivity</string>

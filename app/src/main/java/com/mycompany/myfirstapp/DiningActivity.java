@@ -1,5 +1,6 @@
 package com.mycompany.myfirstapp;
 
+import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
@@ -42,6 +43,14 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            Intent actionintent = new Intent(this, DisplaySettingsActivity.class);
+            startActivity(actionintent);
+            return true;
+        }
+
+        if (id == R.id.action_about) {
+            Intent aboutintent = new Intent(this, DisplayAboutActivity.class);
+            startActivity(aboutintent);
             return true;
         }
 

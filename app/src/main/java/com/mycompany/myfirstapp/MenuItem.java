@@ -1,6 +1,8 @@
+package com.mycompany.myfirstapp;
+
 import java.util.Iterator;
 
-        import org.jsoup.nodes.Element;
+import org.jsoup.nodes.Element;
 
 
 public class MenuItem {
