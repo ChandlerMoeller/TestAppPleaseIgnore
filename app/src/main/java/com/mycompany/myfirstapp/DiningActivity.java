@@ -19,12 +19,12 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
         ActionBar ab = getSupportActionBar();
         ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        // Add three tabs to the Action Bar for display
-        ab.addTab(ab.newTab().setText("Co/S").setTabListener(this));
-        ab.addTab(ab.newTab().setText("Cr/M").setTabListener(this));
-        ab.addTab(ab.newTab().setText("9/10").setTabListener(this));
-        ab.addTab(ab.newTab().setText("P/Kr").setTabListener(this));
-        ab.addTab(ab.newTab().setText("8/Oa").setTabListener(this));
+        // Add tabs to action bar
+        ab.addTab(ab.newTab().setText(R.string.dining_cs_tab).setTabListener(this));
+        ab.addTab(ab.newTab().setText(R.string.dining_cm_tab).setTabListener(this));
+        ab.addTab(ab.newTab().setText(R.string.dining_nt_tab).setTabListener(this));
+        ab.addTab(ab.newTab().setText(R.string.dining_pk_tab).setTabListener(this));
+        ab.addTab(ab.newTab().setText(R.string.dining_eo_tab).setTabListener(this));
     }
 
     @Override

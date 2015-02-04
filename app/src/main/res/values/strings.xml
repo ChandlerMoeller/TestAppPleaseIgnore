@@ -36,6 +36,12 @@
     <string name="str_act_sendfeedback">This activity will have a way to send feedback</string>
     <!-- Dining -->
     <string name="title_activity_dining">Dining</string>
+    <string name="dining_cs_tab">Co/St</string>
+    <string name="dining_cm_tab">Co/St</string>
+    <string name="dining_nt_tab">09/10</string>
+    <string name="dining_pk_tab">Po/Kr</string>
+    <string name="dining_eo_tab">08/Oa</string>
+
     <!--myUCSC-->
     <string name="title_activity_my_ucsc">myUCSC</string>
     <string name="title_activity_my_ucscactivity">myUCSC</string>
