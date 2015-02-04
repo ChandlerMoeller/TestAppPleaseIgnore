@@ -34,7 +34,6 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 public class MainActivity extends ActionBarActivity {
-    public final static String EXTRA_MESSAGE = "com.mycompany.myfirstapp.MESSAGE";
 
     private DrawerLayout mDrawerLayout;
     private ActionBarDrawerToggle mDrawerToggle;
@@ -144,6 +143,12 @@ public class MainActivity extends ActionBarActivity {
             return true;
         }
 
+        if (id == R.id.action_sendfeedback) {
+            Intent aboutintent = new Intent(this, DisplaySendFeedbackActivity.class);
+            startActivity(aboutintent);
+            return true;
+        }
+
         // Pass the event to ActionBarDrawerToggle, if it returns
         // true, then it has handled the app icon touch event
         if (mDrawerToggle.onOptionsItemSelected(item)) {
@@ -208,15 +213,4 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    public void sendMessage(View view) {
-        //read the contents of the text field and deliver that text to another activity
-
-        //Used for creating new activities
-        Intent intent = new Intent(this, DisplayMessageActivity.class);
-        EditText editText = (EditText) findViewById(R.id.edit_message);
-        //Assign the text to a local message variable, and use the putExtra() method to add its text value to the intent.
-        String message = editText.getText().toString();
-        intent.putExtra(EXTRA_MESSAGE, message);
-        startActivity(intent);
-    }
 }

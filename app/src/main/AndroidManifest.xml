@@ -50,6 +50,14 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mycompany.myfirstapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".DisplaySendFeedbackActivity"
+            android:label="@string/title_activity_display_send_feedback"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mycompany.myfirstapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

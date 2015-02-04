@@ -54,6 +54,12 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
             return true;
         }
 
+        if (id == R.id.action_sendfeedback) {
+            Intent aboutintent = new Intent(this, DisplaySendFeedbackActivity.class);
+            startActivity(aboutintent);
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
