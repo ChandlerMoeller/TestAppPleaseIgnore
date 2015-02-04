@@ -1,5 +1,6 @@
 package com.mycompany.myfirstapp;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.ActionBar;
@@ -8,7 +9,15 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class DiningActivity extends ActionBarActivity implements ActionBar.TabListener {
+public class DiningActivity extends ActionBarActivity {
+
+    // Tab fragments
+    ActionBar.Tab csTab, cmTab, ntTab, pkTab, eoTab;
+    android.support.v4.app.Fragment csFragmentTab = new DiningCSFragment();
+    android.support.v4.app.Fragment cmFragmentTab = new DiningCMFragment();
+    android.support.v4.app.Fragment ntFragmentTab = new DiningNTFragment();
+    android.support.v4.app.Fragment pkFragmentTab = new DiningPKFragment();
+    android.support.v4.app.Fragment eoFragmentTab = new DiningEOFragment();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,12 +28,26 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
         ActionBar ab = getSupportActionBar();
         ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        // Add tabs to action bar
-        ab.addTab(ab.newTab().setText(R.string.dining_cs_tab).setTabListener(this));
-        ab.addTab(ab.newTab().setText(R.string.dining_cm_tab).setTabListener(this));
-        ab.addTab(ab.newTab().setText(R.string.dining_nt_tab).setTabListener(this));
-        ab.addTab(ab.newTab().setText(R.string.dining_pk_tab).setTabListener(this));
-        ab.addTab(ab.newTab().setText(R.string.dining_eo_tab).setTabListener(this));
+        // Adding labels
+        csTab = ab.newTab().setText(R.string.dining_cs_tab);
+        cmTab = ab.newTab().setText(R.string.dining_cm_tab);
+        ntTab = ab.newTab().setText(R.string.dining_nt_tab);
+        pkTab = ab.newTab().setText(R.string.dining_pk_tab);
+        eoTab = ab.newTab().setText(R.string.dining_eo_tab);
+
+        // Setting tab listeners
+        csTab.setTabListener(new TabListener(csFragmentTab));
+        cmTab.setTabListener(new TabListener(cmFragmentTab));
+        ntTab.setTabListener(new TabListener(ntFragmentTab));
+        pkTab.setTabListener(new TabListener(pkFragmentTab));
+        eoTab.setTabListener(new TabListener(eoFragmentTab));
+
+        // Adding tabs
+        ab.addTab(csTab);
+        ab.addTab(cmTab);
+        ab.addTab(ntTab);
+        ab.addTab(pkTab);
+        ab.addTab(eoTab);
     }
 
     @Override
@@ -61,23 +84,5 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
         }
 
         return super.onOptionsItemSelected(item);
-    }
-
-    // Implemented from ActionBar.TabListener
-    @Override
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // This is called when a tab is selected.
-    }
-
-    // Implemented from ActionBar.TabListener
-    @Override
-    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // This is called when a previously selected tab is unselected.
-    }
-
-    // Implemented from ActionBar.TabListener
-    @Override
-    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // This is called when a previously selected tab is selected again.
     }
 }
