@@ -58,6 +58,22 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.mycompany.myfirstapp.MainActivity" />
         </activity>
+        <activity
+            android:name=".myUCSCactivity"
+            android:label="@string/title_activity_my_ucscactivity"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mycompany.myfirstapp.MainActivity" />
+        </activity>
+        <activity
+            android:name=".myUCSCActivity"
+            android:label="@string/title_activity_my_ucsc"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.mycompany.myfirstapp.MainActivity" />
+        </activity>
     </application>
 
 </manifest>
