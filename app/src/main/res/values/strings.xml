@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">UCSC</string>
-    //Navigation Drawer                    <string-array name="navigation_array">
+    //Navigation Drawer                        <string-array name="navigation_array">
         <item>Dining</item>
         <item>myUCSC</item>
         <item>eCommons</item>
@@ -62,5 +62,6 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="title_activity_ecommons">EcommonsActivity</string>
+    <string name="title_activity_newdining">NEWDiningActivity</string>
 
 </resources>

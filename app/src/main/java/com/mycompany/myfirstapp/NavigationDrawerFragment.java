@@ -104,13 +104,14 @@ public class NavigationDrawerFragment extends Fragment {
                 new String[]{
                         getString(R.string.title_section1),
                         getString(R.string.title_section2),
+                        "Campus Map",
+                        "Event Calendar",
                         getString(R.string.title_section3),
                         "ecommons",
-                        "Campus Map",
-                        "Bus Routes",
-                        "Event Calendar",
-                        "Piazza"
+                        "Piazza",
+                        "Bus Routes"
                 }));
+
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
     }

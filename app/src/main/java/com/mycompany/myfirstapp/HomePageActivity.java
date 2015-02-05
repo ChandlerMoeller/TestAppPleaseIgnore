@@ -66,33 +66,35 @@ public class HomePageActivity extends ActionBarActivity
                 break;
             case 2:
                 //mTitle = getString(R.string.title_section2);
-                Intent diningintent = new Intent(this, DiningActivity.class);
+                Intent diningintent = new Intent(this, NEWDiningActivity.class);
                 startActivity(diningintent);
                 break;
             case 3:
+                Intent campusmapintent = new Intent(this, DiningActivity.class);
+                startActivity(campusmapintent);
+                break;
+            case 4:
+                Intent eventcalendarintent = new Intent(this, DiningActivity.class);
+                startActivity(eventcalendarintent);
+                break;
+            case 5:
                 //mTitle = getString(R.string.title_section3);
                 Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://my.ucsc.edu/psp/ep9prd/?cmd=login&languageCd=ENG"));
                 startActivity(browserIntent);
                 break;
-            case 4:
+            case 6:
                 Intent browserIntent2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ecommons.ucsc.edu/portal/login"));
                 startActivity(browserIntent2);
                 break;
-            case 5:
-                Intent campusmapintent = new Intent(this, DiningActivity.class);
-                startActivity(campusmapintent);
+            case 7:
+                Intent browserIntent3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://piazza.com/class"));
+                startActivity(browserIntent3);
                 break;
-            case 6:
+            case 8:
                 Intent busroutesintent = new Intent(this, DiningActivity.class);
                 startActivity(busroutesintent);
                 break;
-            case 7:
-                Intent eventcalendarintent = new Intent(this, DiningActivity.class);
-                startActivity(eventcalendarintent);
-                break;
-            case 8:
-                Intent browserIntent3 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://piazza.com/class"));
-                startActivity(browserIntent3);
+            default:
                 break;
         }
     }
