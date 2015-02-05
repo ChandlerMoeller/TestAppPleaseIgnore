@@ -174,7 +174,7 @@ public class MainActivity extends ActionBarActivity {
                 startActivity(diningintent);
                 break;
             case 1:
-                Intent myucscintent = new Intent(this, myUCSCActivity.class);
+                Intent myucscintent = new Intent(this, DiningActivity.class);
                 startActivity(myucscintent);
                 break;
             case 2:

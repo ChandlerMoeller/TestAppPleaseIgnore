@@ -2,7 +2,7 @@
 <resources>
 
     <string name="app_name">UCSC</string>
-    //Navigation Drawer                <string-array name="navigation_array">
+    //Navigation Drawer                    <string-array name="navigation_array">
         <item>Dining</item>
         <item>myUCSC</item>
         <item>eCommons</item>
@@ -53,7 +53,7 @@
     <string name="title_activity_my_ucsc">myUCSC</string>
     <string name="title_activity_my_ucscactivity">myUCSC</string>
 
-    <!--New Shit-->
+    <!-- New Shit -->
     <string name="title_activity_home_page">HomePageActivity</string>
     <string name="title_section1">Home Page</string>
     <string name="title_section2">Dining Hall</string>
@@ -61,5 +61,6 @@
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
+    <string name="title_activity_ecommons">EcommonsActivity</string>
 
 </resources>

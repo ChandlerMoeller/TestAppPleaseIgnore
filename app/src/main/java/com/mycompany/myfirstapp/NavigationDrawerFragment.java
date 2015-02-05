@@ -109,7 +109,7 @@ public class NavigationDrawerFragment extends Fragment {
                         "Campus Map",
                         "Bus Routes",
                         "Event Calendar",
-                        "Advisor"
+                        "Piazza"
                 }));
         mDrawerListView.setItemChecked(mCurrentSelectedPosition, true);
         return mDrawerListView;
