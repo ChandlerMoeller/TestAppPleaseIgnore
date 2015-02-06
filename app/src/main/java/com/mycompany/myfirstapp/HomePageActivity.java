@@ -9,19 +9,13 @@ import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
-import android.content.Context;
-import android.os.Build;
 import android.os.Bundle;
-import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.support.v4.widget.DrawerLayout;
-import android.webkit.WebView;
-import android.widget.ArrayAdapter;
-import android.widget.TextView;
 
 
 public class HomePageActivity extends ActionBarActivity
@@ -68,7 +62,7 @@ public class HomePageActivity extends ActionBarActivity
                 break;
             case 2:
                 //mTitle = getString(R.string.title_section2);
-                Intent diningintent = new Intent(this, NEWDiningActivity.class);
+                Intent diningintent = new Intent(this, DiningActivity.class);
                 startActivity(diningintent);
                 break;
             case 3:

@@ -43,14 +43,6 @@
                 android:value="com.mycompany.myfirstapp.HomePageActivity" />
         </activity>
         <activity
-            android:name=".DiningActivity"
-            android:label="@string/title_activity_dining"
-            android:parentActivityName=".HomePageActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mycompany.myfirstapp.HomePageActivity" />
-        </activity>
-        <activity
             android:name=".DisplaySendFeedbackActivity"
             android:label="@string/title_activity_display_send_feedback"
             android:parentActivityName=".HomePageActivity" >
@@ -59,7 +51,7 @@
                 android:value="com.mycompany.myfirstapp.HomePageActivity" />
         </activity>
         <activity
-            android:name=".NEWDiningActivity"
+            android:name=".DiningActivity"
             android:label="@string/title_activity_newdining"
             android:parentActivityName=".HomePageActivity" >
             <meta-data
