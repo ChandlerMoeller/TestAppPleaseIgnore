@@ -97,6 +97,7 @@ public class HomePageActivity extends ActionBarActivity
 
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
+        //Sets ActionBar color
         actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff00458c")));
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
