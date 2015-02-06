@@ -79,6 +79,7 @@
 
     <!-- Navigation Drawer highlight color -->
     <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
+    <item name="android:textColor">@color/black</item>
 </style>
 
 </resources>
