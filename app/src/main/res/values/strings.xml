@@ -36,16 +36,23 @@
     <string name="str_act_sendfeedback">This activity will have a way to send feedback</string>
     <!-- Dining -->
     <string name="title_activity_dining">Dining</string>
-    <string name="dining_cs">Cowell/Stevenson</string>
-    <string name="dining_cm">Crown/Merrill</string>
-    <string name="dining_nt">Nine/Ten</string>
-    <string name="dining_pk">Porter/Kresge</string>
-    <string name="dining_eo">Eight/Oakes</string>
-    <string name="dining_cs_tab">Co/St</string>
-    <string name="dining_cm_tab">Cr/Me</string>
-    <string name="dining_nt_tab">09/10</string>
-    <string name="dining_pk_tab">Po/Kr</string>
-    <string name="dining_eo_tab">08/Oa</string>
+    <string name="dining_button">Select a Date</string>
+    <!-- For reference, standard is now Cowell = 0, Crown = 1, ..., Eight = 4 -->
+    <string-array name="dining_tabs">
+        <item>Co/St</item>
+        <item>Crown/Me</item>
+        <item>09/10</item>
+        <item>Po/Kr</item>
+        <item>08/Oa</item>
+    </string-array>
+    <string-array name="dining_names">
+        <item>Cowell/Stevenson</item>
+        <item>Crown/Merrill</item>
+        <item>Nine/Ten</item>
+        <item>Porter/Kresge</item>
+        <item>Eight/Oakes</item>
+    </string-array>
+
     <string name="dining_content">This is a dining fragment.</string>
     <string name="dining_content2">You are currently viewing %1$s.</string>
 

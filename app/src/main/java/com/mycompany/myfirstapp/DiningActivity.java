@@ -156,19 +156,8 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
         @Override
         public CharSequence getPageTitle(int position) {
             Locale l = Locale.getDefault();
-            switch (position) {
-                case 0:
-                    return getString(R.string.dining_cs_tab).toUpperCase(l);
-                case 1:
-                    return getString(R.string.dining_cm_tab).toUpperCase(l);
-                case 2:
-                    return getString(R.string.dining_nt_tab).toUpperCase(l);
-                case 3:
-                    return getString(R.string.dining_pk_tab).toUpperCase(l);
-                case 4:
-                    return getString(R.string.dining_eo_tab).toUpperCase(l);
-            }
-            return null;
+            // Uses string arrays, 0 = Cowell, ..., 4 = Eight
+            return getResources().getStringArray(R.array.dining_tabs)[position].toUpperCase(l);
         }
     }
 
