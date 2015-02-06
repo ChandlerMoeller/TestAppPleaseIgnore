@@ -1,5 +1,6 @@
 package com.mycompany.myfirstapp;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -76,6 +77,23 @@ public class NEWDiningActivity extends ActionBarActivity implements ActionBar.Ta
                             .setText(mSectionsPagerAdapter.getPageTitle(i))
                             .setTabListener(this));
         }
+
+
+
+/*
+        //EDDIE's code implementation
+        ArrayList<com.mycompany.myfirstapp.MenuItem> breakfast;
+        breakfast = new ArrayList<com.mycompany.myfirstapp.MenuItem>();
+        com.mycompany.myfirstapp.Menu menu;
+        try {
+            menu = new com.mycompany.myfirstapp.Menu(31, 1, 2015, com.mycompany.myfirstapp.Menu.NT);
+            breakfast = menu.getBreakfast();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+*/
     }
 
 
@@ -191,7 +209,7 @@ public class NEWDiningActivity extends ActionBarActivity implements ActionBar.Ta
         }
     }
 
-    public void DiningButtonPress() {
+    public void DiningButtonPress() throws IOException {
 
     }
 

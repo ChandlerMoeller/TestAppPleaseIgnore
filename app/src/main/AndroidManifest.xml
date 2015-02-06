@@ -59,14 +59,6 @@
                 android:value="com.mycompany.myfirstapp.HomePageActivity" />
         </activity>
         <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_home_page"
-            android:parentActivityName=".HomePageActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mycompany.myfirstapp.HomePageActivity" />
-        </activity>
-        <activity
             android:name=".NEWDiningActivity"
             android:label="@string/title_activity_newdining"
             android:parentActivityName=".HomePageActivity" >
