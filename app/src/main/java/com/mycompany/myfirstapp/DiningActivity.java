@@ -1,54 +1,97 @@
 package com.mycompany.myfirstapp;
 
-import android.app.Fragment;
-import android.content.Intent;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.ActionBar;
+import java.io.IOException;
+import java.util.Locale;
+
 import android.support.v7.app.ActionBarActivity;
+import android.support.v7.app.ActionBar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
+import android.support.v4.app.FragmentPagerAdapter;
 import android.os.Bundle;
+import android.support.v4.view.ViewPager;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 
-public class DiningActivity extends ActionBarActivity {
 
-    // Tab fragments
-    ActionBar.Tab csTab, cmTab, ntTab, pkTab, eoTab;
-    android.support.v4.app.Fragment csFragmentTab = new DiningCSFragment();
-    android.support.v4.app.Fragment cmFragmentTab = new DiningCMFragment();
-    android.support.v4.app.Fragment ntFragmentTab = new DiningNTFragment();
-    android.support.v4.app.Fragment pkFragmentTab = new DiningPKFragment();
-    android.support.v4.app.Fragment eoFragmentTab = new DiningEOFragment();
+public class DiningActivity extends ActionBarActivity implements ActionBar.TabListener {
+
+    /**
+     * The {@link android.support.v4.view.PagerAdapter} that will provide
+     * fragments for each of the sections. We use a
+     * {@link FragmentPagerAdapter} derivative, which will keep every
+     * loaded fragment in memory. If this becomes too memory intensive, it
+     * may be best to switch to a
+     * {@link android.support.v4.app.FragmentStatePagerAdapter}.
+     */
+    SectionsPagerAdapter mSectionsPagerAdapter;
+
+    /**
+     * The {@link ViewPager} that will host the section contents.
+     */
+    ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dining);
 
-        // Set the Action Bar to use tabs for navigation
-        ActionBar ab = getSupportActionBar();
-        ab.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+        // Set up the action bar.
+        final ActionBar actionBar = getSupportActionBar();
+        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        // Adding labels
-        csTab = ab.newTab().setText(R.string.dining_cs_tab);
-        cmTab = ab.newTab().setText(R.string.dining_cm_tab);
-        ntTab = ab.newTab().setText(R.string.dining_nt_tab);
-        pkTab = ab.newTab().setText(R.string.dining_pk_tab);
-        eoTab = ab.newTab().setText(R.string.dining_eo_tab);
+        // Create the adapter that will return a fragment for each of the three
+        // primary sections of the activity.
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        // Setting tab listeners
-        csTab.setTabListener(new TabListener(csFragmentTab));
-        cmTab.setTabListener(new TabListener(cmFragmentTab));
-        ntTab.setTabListener(new TabListener(ntFragmentTab));
-        pkTab.setTabListener(new TabListener(pkFragmentTab));
-        eoTab.setTabListener(new TabListener(eoFragmentTab));
+        // Set up the ViewPager with the sections adapter.
+        mViewPager = (ViewPager) findViewById(R.id.pager);
+        mViewPager.setAdapter(mSectionsPagerAdapter);
 
-        // Adding tabs
-        ab.addTab(csTab);
-        ab.addTab(cmTab);
-        ab.addTab(ntTab);
-        ab.addTab(pkTab);
-        ab.addTab(eoTab);
+        // When swiping between different sections, select the corresponding
+        // tab. We can also use ActionBar.Tab#select() to do this if we have
+        // a reference to the Tab.
+        mViewPager.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
+            @Override
+            public void onPageSelected(int position) {
+                actionBar.setSelectedNavigationItem(position);
+            }
+        });
+
+        // For each of the sections in the app, add a tab to the action bar.
+        for (int i = 0; i < mSectionsPagerAdapter.getCount(); i++) {
+            // Create a tab with text corresponding to the page title defined by
+            // the adapter. Also specify this Activity object, which implements
+            // the TabListener interface, as the callback (listener) for when
+            // this tab is selected.
+            actionBar.addTab(
+                    actionBar.newTab()
+                            .setText(mSectionsPagerAdapter.getPageTitle(i))
+                            .setTabListener(this));
+        }
+
+
+
+/*
+        //EDDIE's code implementation
+        ArrayList<com.mycompany.myfirstapp.MenuItem> breakfast;
+        breakfast = new ArrayList<com.mycompany.myfirstapp.MenuItem>();
+        com.mycompany.myfirstapp.Menu menu;
+        try {
+            menu = new com.mycompany.myfirstapp.Menu(31, 1, 2015, com.mycompany.myfirstapp.Menu.NT);
+            breakfast = menu.getBreakfast();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+
+*/
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -66,23 +109,104 @@ public class DiningActivity extends ActionBarActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            Intent actionintent = new Intent(this, DisplaySettingsActivity.class);
-            startActivity(actionintent);
-            return true;
-        }
-
-        if (id == R.id.action_about) {
-            Intent aboutintent = new Intent(this, DisplayAboutActivity.class);
-            startActivity(aboutintent);
-            return true;
-        }
-
-        if (id == R.id.action_sendfeedback) {
-            Intent aboutintent = new Intent(this, DisplaySendFeedbackActivity.class);
-            startActivity(aboutintent);
             return true;
         }
 
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+        // When the given tab is selected, switch to the corresponding page in
+        // the ViewPager.
+        mViewPager.setCurrentItem(tab.getPosition());
+    }
+
+    @Override
+    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+    }
+
+    @Override
+    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
+    }
+
+    /**
+     * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
+     * one of the sections/tabs/pages.
+     */
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
+
+        public SectionsPagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+            // getItem is called to instantiate the fragment for the given page.
+            // Return a PlaceholderFragment (defined as a static inner class below).
+            return PlaceholderFragment.newInstance(position + 1);
+        }
+
+        @Override
+        public int getCount() {
+            // Show 5 total pages.
+            return 5;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            Locale l = Locale.getDefault();
+            switch (position) {
+                case 0:
+                    return getString(R.string.dining_cs_tab).toUpperCase(l);
+                case 1:
+                    return getString(R.string.dining_cm_tab).toUpperCase(l);
+                case 2:
+                    return getString(R.string.dining_nt_tab).toUpperCase(l);
+                case 3:
+                    return getString(R.string.dining_pk_tab).toUpperCase(l);
+                case 4:
+                    return getString(R.string.dining_eo_tab).toUpperCase(l);
+            }
+            return null;
+        }
+    }
+
+    /**
+     * A placeholder fragment containing a simple view.
+     */
+    public static class PlaceholderFragment extends Fragment {
+        /**
+         * The fragment argument representing the section number for this
+         * fragment.
+         */
+        private static final String ARG_SECTION_NUMBER = "section_number";
+
+        /**
+         * Returns a new instance of this fragment for the given section
+         * number.
+         */
+        public static PlaceholderFragment newInstance(int sectionNumber) {
+            PlaceholderFragment fragment = new PlaceholderFragment();
+            Bundle args = new Bundle();
+            args.putInt(ARG_SECTION_NUMBER, sectionNumber);
+            fragment.setArguments(args);
+            return fragment;
+        }
+
+        public PlaceholderFragment() {
+        }
+
+        @Override
+        public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                                 Bundle savedInstanceState) {
+            View rootView = inflater.inflate(R.layout.fragment_dining, container, false);
+            return rootView;
+        }
+    }
+
+    public void DiningButtonPress() throws IOException {
+
+    }
+
 }
