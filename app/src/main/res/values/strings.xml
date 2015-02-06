@@ -56,12 +56,12 @@
     <!-- New Shit -->
     <string name="title_activity_home_page">HomePageActivity</string>
     <string name="title_section1">Home Page</string>
-    <string name="title_section2">Dining Hall</string>
+    <string name="title_section2">Dining</string>
     <string name="title_section3">myUCSC</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>
     <string name="title_activity_ecommons">EcommonsActivity</string>
-    <string name="title_activity_newdining">NEWDiningActivity</string>
+    <string name="title_activity_newdining">Dining</string>
 
 </resources>

@@ -5,6 +5,8 @@ import java.util.ArrayList;
 import java.util.Locale;
 
 import android.app.DialogFragment;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -46,6 +48,7 @@ public class NEWDiningActivity extends ActionBarActivity implements ActionBar.Ta
 
         // Set up the action bar.
         final ActionBar actionBar = getSupportActionBar();
+        actionBar.setBackgroundDrawable(new ColorDrawable(Color.parseColor("#ff00458c")));
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         // Create the adapter that will return a fragment for each of the three
