@@ -55,6 +55,7 @@ public class HomePageActivity extends ActionBarActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
                 .commit();
+        //can make switch statement here for fragments
     }
 
     public void onSectionAttached(int number) {

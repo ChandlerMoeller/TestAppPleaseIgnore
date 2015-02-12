@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">UCSC</string>
+    <string name="app_name">youCSC</string>
     //Navigation Drawer                        <string-array name="navigation_array">
         <item>Dining</item>
         <item>myUCSC</item>
@@ -14,8 +14,8 @@
     <string name="drawer_open">Open navigation drawer</string>
     <string name="drawer_close">Close navigation drawer</string>
     <!-- HomePage -->
-    <string name="str_welcome">Welcome to the UCSC unofficial app!</string>
-    <string name="str_slidetobegin">Slide left to right to use the navigation drawer.</string>
+    <string name="str_welcome"><font size="30">Welcome to the UCSC unofficial app!\n</font>Slide to the right to use the navigation drawer!</string>
+    <string name="str_slidetobegin">Slide to the right to use the navigation drawer!</string>
     <string name="edit_message">Enter a message</string>
     <string name="button_send">Send</string>
     <string name="title_activity_main">MainActivity</string>
@@ -62,7 +62,7 @@
 
     <!-- New Shit -->
     <string name="title_activity_home_page">HomePageActivity</string>
-    <string name="title_section1">Home Page</string>
+    <string name="title_section1">youCSC</string>
     <string name="title_section2">Dining</string>
     <string name="title_section3">myUCSC</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
