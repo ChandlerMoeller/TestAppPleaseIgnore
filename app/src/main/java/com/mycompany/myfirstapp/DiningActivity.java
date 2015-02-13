@@ -1,8 +1,10 @@
 package com.mycompany.myfirstapp;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Locale;
 
+import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
@@ -76,20 +78,27 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
 
 
 
-/*
+
         //EDDIE's code implementation
         ArrayList<com.mycompany.myfirstapp.MenuItem> breakfast;
         breakfast = new ArrayList<com.mycompany.myfirstapp.MenuItem>();
         com.mycompany.myfirstapp.Menu menu;
         try {
-            menu = new com.mycompany.myfirstapp.Menu(31, 1, 2015, com.mycompany.myfirstapp.Menu.NT);
+            /*
+            StrictMode.ThreadPolicy policy = new
+                    StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            */
+
+            menu = new com.mycompany.myfirstapp.Menu(12, 2, 2015, com.mycompany.myfirstapp.Menu.NT);
             breakfast = menu.getBreakfast();
         } catch (IOException e) {
             e.printStackTrace();
         }
 
 
-*/
+
     }
 
 
