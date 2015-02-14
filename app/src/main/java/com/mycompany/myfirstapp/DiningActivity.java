@@ -78,12 +78,13 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
 
 
 
-
+/*
         //EDDIE's code implementation
         ArrayList<com.mycompany.myfirstapp.MenuItem> breakfast;
         breakfast = new ArrayList<com.mycompany.myfirstapp.MenuItem>();
         com.mycompany.myfirstapp.Menu menu;
         try {
+
             // Remove this
             StrictMode.ThreadPolicy policy = new
                     StrictMode.ThreadPolicy.Builder()
@@ -91,12 +92,13 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
             StrictMode.setThreadPolicy(policy);
 
 
+
             menu = new com.mycompany.myfirstapp.Menu(12, 2, 2015, com.mycompany.myfirstapp.Menu.NT);
             breakfast = menu.getBreakfast();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+*/
 
 
     }
