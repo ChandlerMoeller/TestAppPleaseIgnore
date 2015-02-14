@@ -1,170 +1,99 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#8ae4e4e4"
-    android:paddingBottom="0dp"
-    android:paddingLeft="0dp"
-    android:paddingRight="0dp"
-    android:paddingTop="1dp"
     tools:context="com.mycompany.myfirstapp.HomePageActivity$PlaceholderFragment">
 
-    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/tableLayout1"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp">
+        android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        android:orientation="vertical">
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/tableLayout1"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentStart="true"
-            android:orientation="vertical">
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tableLayout2"
+            style="@style/largecard">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="@string/str_welcome" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/tableLayout2"
-                android:layout_width="fill_parent"
-                android:layout_height="180dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:background="@android:drawable/dialog_holo_light_frame"
-                android:orientation="vertical">
+        </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="#FFF"
-                    android:gravity="center"
-                    android:padding="16dp"
-                    android:text="@string/str_welcome" />
-                <!--android:textSize="30sp" android:background="#FFF"-->
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tableLayout3"
+            style="@style/largecard">
 
-            </LinearLayout>
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_horizontal"
+                android:background="#FFF"
+                android:scaleType="fitXY"
+                android:src="@drawable/scenicwetgrass" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/tableLayout3"
-                android:layout_width="fill_parent"
-                android:layout_height="180dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:background="@android:drawable/dialog_holo_light_frame"
-                android:orientation="vertical">
+        </android.support.v7.widget.CardView>
 
-                <ImageView
-                    android:id="@+id/imageView"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="#FFF"
-                    android:padding="0dp"
-                    android:scaleType="fitXY"
-                    android:src="@drawable/scenicwetgrass" />
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tableLayout4"
+            style="@style/largecard">
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="Things being worked on:\nDining\nFinish Navigation Drawer" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/tableLayout4"
-                android:layout_width="fill_parent"
-                android:layout_height="90dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:background="@android:drawable/dialog_holo_light_frame"
-                android:orientation="vertical">
+        </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="#FFF"
-                    android:gravity="center"
-                    android:text="Things being worked on:\nDining\nFinish Navigation Drawer" />
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tableLayout5"
+            style="@style/largecard">
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="Things Implemented:\nmyUCSC link\necommons link\nPiazza link" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/tableLayout5"
-                android:layout_width="fill_parent"
-                android:layout_height="90dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:background="@android:drawable/dialog_holo_light_frame"
-                android:orientation="vertical">
+        </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="#FFF"
-                    android:gravity="center"
-                    android:text="Things Implemented:\nmyUCSC link\necommons link\nPiazza link" />
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tableLayout6"
+            style="@style/smallcard">
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="This will say something in the future!" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/tableLayout6"
-                android:layout_width="fill_parent"
-                android:layout_height="90dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:background="@android:drawable/dialog_holo_light_frame"
-                android:orientation="vertical">
+        </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="#FFF"
-                    android:gravity="center"
-                    android:text="This will say something in the future!" />
+        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/tableLayout7"
+            style="@style/smallcard">
 
-            </LinearLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FFF"
+                android:gravity="center"
+                android:text="You scrolled down!" />
 
-            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/tableLayout7"
-                android:layout_width="fill_parent"
-                android:layout_height="90dp"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentStart="true"
-                android:background="@android:drawable/dialog_holo_light_frame"
-                android:orientation="vertical">
+        </android.support.v7.widget.CardView>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginBottom="0dp"
-                    android:layout_marginTop="0dp"
-                    android:background="#FFF"
-                    android:gravity="center"
-                    android:text="You scrolled down!" />
+    </LinearLayout>
 
-            </LinearLayout>
-
-        </LinearLayout>
-
-    </ScrollView>
-
-</RelativeLayout>
+</ScrollView>
