@@ -2,12 +2,15 @@
 <resources>
 
     <string name="app_name">youCSC</string>
-    //Navigation Drawer                        <string-array name="navigation_array">
+    //Navigation Drawer
+    <string-array name="navigation_array">
+        <item>youCSC</item>
         <item>Dining</item>
         <item>myUCSC</item>
         <item>eCommons</item>
-        <item>Campus Map</item>
+        <item>Piazza</item>
         <item>Bus Routes</item>
+        <item>Campus Map</item>
         <item>Event Calendar</item>
     </string-array>
 
@@ -62,9 +65,6 @@
 
     <!-- New Shit -->
     <string name="title_activity_home_page">HomePageActivity</string>
-    <string name="title_section1">youCSC</string>
-    <string name="title_section2">Dining</string>
-    <string name="title_section3">myUCSC</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="action_example">Example action</string>

@@ -84,12 +84,12 @@ public class DiningActivity extends ActionBarActivity implements ActionBar.TabLi
         breakfast = new ArrayList<com.mycompany.myfirstapp.MenuItem>();
         com.mycompany.myfirstapp.Menu menu;
         try {
-            /*
+            // Remove this
             StrictMode.ThreadPolicy policy = new
                     StrictMode.ThreadPolicy.Builder()
                     .permitAll().build();
             StrictMode.setThreadPolicy(policy);
-            */
+
 
             menu = new com.mycompany.myfirstapp.Menu(12, 2, 2015, com.mycompany.myfirstapp.Menu.NT);
             breakfast = menu.getBreakfast();
