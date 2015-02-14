@@ -101,18 +101,5 @@
         <item name="android:layout_marginBottom">5dp</item>
 
     </style>
-
-    <style name="Theme.Whtsnxt" parent="@style/Theme.AppCompat.Light.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <!-- colorPrimary is used for the default action bar background -->
-        <item name="windowActionModeOverlay">true</item>
-        <item name="android:textColorPrimary">@color/slug_blue</item>
-        <item name="colorPrimary">@color/slug_yellow</item>
-        <item name="colorPrimaryDark">@color/wallet_holo_blue_light</item>
-
-        <item name="android:windowBackground">@color/slug_blue</item>
-        <item name="android:colorBackground">@color/slug_blue</item>
-
-    </style>
-
+    
 </resources>
