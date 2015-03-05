@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.mycompany.myfirstapp" >
+    package="com.drmidnight.materialtest" >
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,7 +10,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
-            android:name=".HomePageActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,44 +19,12 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".DisplayMessageActivity"
-            android:label="@string/title_activity_display_message"
-            android:parentActivityName=".HomePageActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mycompany.myfirstapp.HomePageActivity" />
-        </activity>
-        <activity
-            android:name=".DisplaySettingsActivity"
-            android:label="@string/title_activity_display_settings"
-            android:parentActivityName=".HomePageActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mycompany.myfirstapp.HomePageActivity" />
-        </activity>
-        <activity
-            android:name=".DisplayAboutActivity"
-            android:label="@string/title_activity_display_about"
-            android:parentActivityName=".HomePageActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mycompany.myfirstapp.HomePageActivity" />
-        </activity>
-        <activity
-            android:name=".DisplaySendFeedbackActivity"
-            android:label="@string/title_activity_display_send_feedback"
-            android:parentActivityName=".HomePageActivity" >
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mycompany.myfirstapp.HomePageActivity" />
-        </activity>
-        <activity
             android:name=".DiningActivity"
-            android:label="@string/title_activity_newdining"
-            android:parentActivityName=".HomePageActivity" >
+            android:label="@string/title_activity_dining"
+            android:parentActivityName=".MainActivity" >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.mycompany.myfirstapp.HomePageActivity" />
+                android:value="com.drmidnight.materialtest.MainActivity" />
         </activity>
     </application>
 
