@@ -71,4 +71,14 @@
     <string name="title_activity_ecommons">EcommonsActivity</string>
     <string name="title_activity_newdining">Dining</string>
 
+
+
+    <string-array name="planets_array">
+        <item>Home</item>
+        <item>About</item>
+        <item>Trinity Tuts</item>
+    </string-array>
+    <string name="action_websearch">Web search</string>
+    <string name="app_not_available">Sorry, there\'s no web browser available</string>
+
 </resources>
