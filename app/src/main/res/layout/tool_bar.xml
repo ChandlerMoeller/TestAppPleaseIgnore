@@ -6,7 +6,7 @@
     android:background="@color/slug_blue"
     android:theme="@style/ThemeOverlay.AppCompat.Dark"
     android:elevation="4dp"
-    android:paddingTop="5dp"
+    android:paddingTop="0dp"
     app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
     app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
 
