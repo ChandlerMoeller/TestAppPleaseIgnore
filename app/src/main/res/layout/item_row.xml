@@ -23,6 +23,7 @@
         android:id="@+id/rowText"
         android:textSize="14sp"
         android:textColor="#de000000"
+        android:textStyle=""
 
         android:fontFamily="sans-serif-medium"
 

@@ -4,7 +4,7 @@
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/slug_blue</item>
-        <item name="colorPrimaryDark">@color/slug_blue</item>
+        <item name="colorPrimaryDark">#ff003367</item>
 
 
         <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>

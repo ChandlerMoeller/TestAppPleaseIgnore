@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">youCSC 2.0</string>
-    //Navigation Drawer        <string-array name="navigation_array">
-        <item>youCSC</item>
-        <item>Dining</item>
-        <item>myUCSC</item>
-        <item>eCommons</item>
-        <item>Piazza</item>
-        <item>Bus Routes</item>
-        <item>Campus Map</item>
-        <item>Event Calendar</item>
-    </string-array>
+    <string name="app_name">yo<i>uCSC</i></string>
     <string-array name="dining_tabs">
         <item>Co/St</item>
         <item>Crown/Me</item>
