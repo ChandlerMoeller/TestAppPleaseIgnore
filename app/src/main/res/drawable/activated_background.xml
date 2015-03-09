@@ -7,3 +7,17 @@
 <item android:state_checked="true" android:drawable="@color/slug_yellow" />
 <item android:drawable="@android:color/transparent"/>
     </selector>
+
+
+    <!--
+<ripple
+xmlns:android="http://schemas.android.com/apk/res/android"
+android:color="@color/slug_yellow">
+<item>
+    <shape
+        android:shape="rectangle">
+        <solid android:color="?colorAccent" />
+    </shape>
+</item>
+</ripple>
+-->

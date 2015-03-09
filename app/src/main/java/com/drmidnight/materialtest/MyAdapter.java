@@ -29,6 +29,9 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     private String mNavTitles2[];
     private int mIcons2[];
 
+    private String mNavTitles3[];
+    private int mIcons3[];
+
     private String mNavSubTitles[];
 
     private String name;        //String Resource for header View Name
@@ -95,12 +98,14 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
 
 
 
-    MyAdapter(String Titles[],int Icons[],String Titles2[],int Icons2[],String Subtitles[],String Name,String Email, int Profile,Context passedContext){ // MyAdapter Constructor with titles and icons parameter
+    MyAdapter(String Titles[],int Icons[],String Titles2[],int Icons2[],String Titles3[],int Icons3[],String Subtitles[],String Name,String Email, int Profile,Context passedContext){ // MyAdapter Constructor with titles and icons parameter
         // titles, icons, name, email, profile pic are passed from the main activity as we
         mNavTitles = Titles;                //have seen earlier
         mIcons = Icons;
         mNavTitles2= Titles2;
         mIcons2 = Icons2;
+        mNavTitles3 = Titles3;
+        mIcons3 = Icons3;
         mNavSubTitles= Subtitles;
         name = Name;
         email = Email;
@@ -173,9 +178,12 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             if (position < mNavTitles.length + 1) {
                 holder.textView.setText(mNavTitles[position - 1]); // Setting the Text with the array of our Titles
                 holder.imageView.setImageResource(mIcons[position - 1]);// Settimg the image with array of our icons
-            } else {
+            } else if (position > mNavTitles.length && position <= mNavTitles.length+mNavTitles2.length+mNavSubTitles.length+2) {
                 holder.textView.setText(mNavTitles2[position - 1 - mNavTitles.length - mNavSubTitles.length - 1]); // Setting the Text with the array of our Titles
                 holder.imageView.setImageResource(mIcons2[position - 1 - mNavTitles.length - mNavSubTitles.length - 1]);// Setting the image with array of our icons
+            } else {
+                holder.textView.setText(mNavTitles3[position - 1 - mNavTitles.length - mNavTitles2.length - mNavSubTitles.length - 2]); // Setting the Text with the array of our Titles
+                holder.imageView.setImageResource(mIcons3[position - 1 - mNavTitles.length - mNavTitles2.length - mNavSubTitles.length - 2]);// Setting the image with array of our icons
             }
         }
         else if(holder.Holderid ==-1) {                              // as the list view is going to be called after the header view so we decrement the
@@ -197,7 +205,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     @Override
     public int getItemCount() {
         ////return mNavTitles.length+1; // the number of items in the list will be +1 the titles including the header view.
-        return mNavTitles.length+mNavTitles2.length+mNavSubTitles.length+2;
+        return mNavTitles.length+mNavTitles2.length+mNavTitles3.length+mNavSubTitles.length+3;
     }
 
 
@@ -208,7 +216,7 @@ public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
             return TYPE_HEADER;
         } else if (position == 7) {
             return TYPE_SUBTITLE;
-        } else if(position == 6) {
+        } else if(position == 6 || position == 11) {
             return TYPE_LINE;
         }
 

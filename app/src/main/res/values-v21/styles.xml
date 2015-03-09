@@ -1,0 +1,43 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/slug_blue</item>
+        <item name="colorPrimaryDark">#ff003367</item>
+        <item name="colorAccent">@color/slug_yellow</item>
+        <item name="android:textColorPrimary">#ffffff</item>
+
+        <item name="android:navigationBarColor">@color/slug_blue</item>
+        <item name="android:colorControlNormal">@color/slug_yellow</item>
+
+        <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
+    </style>
+
+<!--
+    <item name="android:textViewStyle">@style/RobotoTextViewStyle</item>
+
+
+    <style name="RobotoTextViewStyle" parent="android:Widget.TextView">
+        <item name="android:fontFamily">sans-serif-light</item>
+    </style> -->
+
+    <!--Card layout styles-->
+
+    <style name="largecard">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">180dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="smallcard">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">90dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:layout_marginBottom">5dp</item>
+
+    </style>
+
+
+</resources>

@@ -48,6 +48,9 @@ public class MainActivity extends ActionBarActivity {
     String TITLES2[] = {"myUCSC","eCommons","Piazza"};
     int ICONS2[] = {R.drawable.ic_myucsc, R.drawable.ic_myucsc, R.drawable.piazza};
 
+    String TITLES3[] = {"Settings","Help & feedback","About"};
+    int ICONS3[] = {R.drawable.ic_settings, R.drawable.ic_feedback, R.drawable.ic_feedback};
+
     String SUBTITLES[] = {"Quick Links"};
 
     String NAME = "youCSC";
@@ -75,7 +78,7 @@ public class MainActivity extends ActionBarActivity {
 
         mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
 
-        mAdapter = new MyAdapter(TITLES,ICONS,TITLES2,ICONS2,SUBTITLES,NAME,EMAIL,PROFILE,this);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
+        mAdapter = new MyAdapter(TITLES,ICONS,TITLES2,ICONS2,TITLES3,ICONS3,SUBTITLES,NAME,EMAIL,PROFILE,this);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
         // And passing the titles,icons,header view name, header view email,
         // and header view profile picture
 
@@ -97,7 +100,7 @@ public class MainActivity extends ActionBarActivity {
 
 
                 if (child != null && mGestureDetector.onTouchEvent(motionEvent)) {
-                    Drawer.closeDrawers();
+                    //Drawer.closeDrawers();
                     Toast.makeText(MainActivity.this, "The Item Clicked is: " + recyclerView.getChildPosition(child), Toast.LENGTH_SHORT).show();
 
                     switch (recyclerView.getChildPosition(child)) {
@@ -105,19 +108,21 @@ public class MainActivity extends ActionBarActivity {
                             //This is the header
                             break;
                         case 1:
+                            Drawer.closeDrawers();
                             break;
                         case 2:
+                            Drawer.closeDrawers();
                             Intent diningintent = new Intent(MainActivity.this, DiningActivity.class);
                             startActivity(diningintent);
                             break;
                         case 3:
-
+                            Drawer.closeDrawers();
                             break;
                         case 4:
-
+                            Drawer.closeDrawers();
                             break;
                         case 5:
-
+                            Drawer.closeDrawers();
                             break;
                         case 6:
                             //This is a line
@@ -126,18 +131,21 @@ public class MainActivity extends ActionBarActivity {
                             //This is a subtitle
                             break;
                         case 8:
+                            Drawer.closeDrawers();
                             Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://my.ucsc.edu/psp/ep9prd/?cmd=login&languageCd=ENG"));
                             if (browserIntent.resolveActivity(getPackageManager()) != null) {
                                 startActivity(browserIntent);
                             }
                             break;
                         case 9:
+                            Drawer.closeDrawers();
                             Intent browserIntent2 = new Intent(Intent.ACTION_VIEW, Uri.parse("https://ecommons.ucsc.edu/portal/login"));
                             if (browserIntent2.resolveActivity(getPackageManager()) != null) {
                                 startActivity(browserIntent2);
                             }
                             break;
                         case 10:
+                            Drawer.closeDrawers();
                             Intent browserIntent3 = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse("https://piazza.com/class"));
                             if (browserIntent3.resolveActivity(getPackageManager()) != null) {
                                 startActivity(browserIntent3);
@@ -207,7 +215,9 @@ public class MainActivity extends ActionBarActivity {
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_todining) {
+            Intent diningintent = new Intent(MainActivity.this, DiningActivity.class);
+            startActivity(diningintent);
             return true;
         }
 

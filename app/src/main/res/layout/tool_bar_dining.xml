@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/colorPrimary"
+    android:elevation="4dp"
+    android:paddingTop="0dp"
+    app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+    android:minHeight="?attr/actionBarSize"
+
+
+    >
+
+    <Spinner
+        android:id="@+id/spinner_nav"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColorPrimary="#FFFFFF"
+        android:textColor="#FFFFFF"
+
+        android:entries="@array/dining_tabs2"
+        android:prompt="@string/action_choosedining"
+        android:spinnerMode="dropdown"
+
+        />
+
+    <!--android:theme="@style/ThemeOverlay.AppCompat.Dark"-->
+</android.support.v7.widget.Toolbar>

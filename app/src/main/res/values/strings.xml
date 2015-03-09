@@ -10,13 +10,30 @@
         <item>08/Oa</item>
     </string-array>
 
+    <string-array name="dining_tabs2">
+        <item>Cowell/Stevenson</item>
+        <item>Crown/Merrill</item>
+        <item>09/10</item>
+        <item>Porter/Kresge</item>
+        <item>08/Oakes</item>
+    </string-array>
+
     <string name="hello_world">Hello world!</string>
+
+    //Toolbar items
     <string name="action_settings">Settings</string>
     <string name="action_about">About</string>
     <string name="action_sendfeedback">Send Feedback</string>
+
+    //Home page
     <string name="str_welcome"><font size="30">Welcome to the UCSC unofficial app!\n</font>Slide to the right to use the navigation drawer!</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    //Dining
     <string name="title_activity_dining">Dining</string>
+        //Bottom toolbar
+    <string name="action_changedate">Change Date</string>
+    <string name="action_choosedining">Choose a dining hall</string>
 
 </resources>
