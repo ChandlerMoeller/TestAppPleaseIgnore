@@ -173,13 +173,13 @@ public class MyDiningListAdapter extends RecyclerView.Adapter<MyDiningListAdapte
             // position by 1 and pass it to the holder while setting the text and image
             if (position < mNavTitles.length + 1) {
                 holder.textView.setText(mNavTitles[position - 1]); // Setting the Text with the array of our Titles
-                holder.imageView.setImageResource(mIcons[position - 1]);// Settimg the image with array of our icons
+                //holder.imageView.setImageResource(mIcons[position - 1]);// Settimg the image with array of our icons
             } else if (position > mNavTitles.length && position <= mNavTitles.length+mNavTitles2.length+mNavSubTitles.length+2) {
                 holder.textView.setText(mNavTitles2[position - 1 - mNavTitles.length - mNavSubTitles.length - 1]); // Setting the Text with the array of our Titles
-                holder.imageView.setImageResource(mIcons2[position - 1 - mNavTitles.length - mNavSubTitles.length - 1]);// Setting the image with array of our icons
+                //holder.imageView.setImageResource(mIcons2[position - 1 - mNavTitles.length - mNavSubTitles.length - 1]);// Setting the image with array of our icons
             } else {
                 holder.textView.setText(mNavTitles3[position - 1 - mNavTitles.length - mNavTitles2.length - mNavSubTitles.length - 2]); // Setting the Text with the array of our Titles
-                holder.imageView.setImageResource(mIcons3[position - 1 - mNavTitles.length - mNavTitles2.length - mNavSubTitles.length - 2]);// Setting the image with array of our icons
+                //holder.imageView.setImageResource(mIcons3[position - 1 - mNavTitles.length - mNavTitles2.length - mNavSubTitles.length - 2]);// Setting the image with array of our icons
             }
         }
         else if(holder.Holderid ==-1) {                              // as the list view is going to be called after the header view so we decrement the

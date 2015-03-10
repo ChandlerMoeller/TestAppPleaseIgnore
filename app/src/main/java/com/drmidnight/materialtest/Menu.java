@@ -24,7 +24,7 @@ public class Menu {
         breakfast = new ArrayList<MenuItem>(0);
         lunch     = new ArrayList<MenuItem>(0);
         dinner    = new ArrayList<MenuItem>(0);
-        Document doc = Jsoup.connect("http://nutrition.sa.ucsc.edu/menuSamp.asp?myaction=read&sName=&dtdate="+month+"%2F"+day+"%2F"+year+"&locationNum="+loc+"&naFlag=1").get();
+        Document doc = Jsoup.connect("http://nutrition.sa.ucsc.edu/menuSamp.asp?myaction=read&sName=&dtdate="+month+"%2F"+day+"%2F"+year+"&locationNum="+loc+"&naFlag=1").timeout(100*1000).get();
         Elements span = doc.getElementsByTag("span");
         Iterator<Element> itor = span.iterator();
         ArrayList<Element> elems = new ArrayList<Element>(0);

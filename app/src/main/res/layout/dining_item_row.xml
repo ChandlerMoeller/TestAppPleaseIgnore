@@ -8,18 +8,10 @@
     android:orientation="horizontal"
     android:background="@drawable/activated_background">
 
-
-    <ImageView
-        android:layout_width="24dp"
-        android:layout_height="24dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="32dp"
-        android:id="@+id/rowIcon"
-        android:src="@drawable/ic_launcher"/>
-
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
         android:id="@+id/rowText"
         android:textSize="14sp"
         android:textColor="#de000000"

@@ -5,6 +5,7 @@ import android.app.Dialog;
 import android.app.DialogFragment;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -19,7 +20,10 @@ import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
 import android.widget.Toast;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.TimeZone;
 
 
 public class DiningActivity extends ActionBarActivity {
@@ -27,9 +31,9 @@ public class DiningActivity extends ActionBarActivity {
     private Toolbar toolbar;
 
 
-    Calendar c = Calendar.getInstance();
+    Calendar c = Calendar.getInstance(TimeZone.getDefault());
     int startYear = c.get(Calendar.YEAR);
-    int startMonth = c.get(Calendar.MONTH);
+    int startMonth = c.get(Calendar.MONTH) + 1;
     int startDay = c.get(Calendar.DAY_OF_MONTH);
 
     //startMonth + "/" + startDay + "/" + startYear;
@@ -40,8 +44,8 @@ public class DiningActivity extends ActionBarActivity {
     RecyclerView mRecyclerView;                           // Declaring RecyclerView
     RecyclerView.Adapter mAdapter;                        // Declaring Adapter For Recycler View
     RecyclerView.LayoutManager mLayoutManager;            // Declaring Layout Manager as a linear layout manager
-    String BREAKFASTTITLES[] =  {"Food1","Food2","Food3","Food4","Food5"};
-    int BREAKFASTICONS[] = {R.drawable.ic_launcher, R.drawable.ic_dining, R.drawable.ic_bus, R.drawable.ic_map, R.drawable.ic_calendar};
+    String BREAKFASTTITLES[];
+    int BREAKFASTICONS[] = {R.drawable.ic_launcher};
     String BREAKFASTNAME = "Breakfast";
     String BREAKFASTEMAIL = "Breakfast Hours will go here";
     int BREAKFASTPROFILE = R.drawable.ic_launcher;
@@ -84,6 +88,80 @@ public class DiningActivity extends ActionBarActivity {
                 onBackPressed();
             }
         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //EDDIE's code implementation
+        ArrayList<com.drmidnight.materialtest.MenuItem> breakfast;
+        breakfast = new ArrayList<com.drmidnight.materialtest.MenuItem>();
+        ArrayList<com.drmidnight.materialtest.MenuItem> lunch;
+        lunch = new ArrayList<com.drmidnight.materialtest.MenuItem>();
+        ArrayList<com.drmidnight.materialtest.MenuItem> dinner;
+        dinner = new ArrayList<com.drmidnight.materialtest.MenuItem>();
+        com.drmidnight.materialtest.Menu menu;
+        try {
+
+            // Remove this
+            StrictMode.ThreadPolicy policy = new
+                    StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+
+
+
+            menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.CM);
+            breakfast = menu.getBreakfast();
+            lunch = menu.getLunch();
+            dinner = menu.getDinner();
+            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.CS);
+            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.PK);
+            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.EO);
+            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.NT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        BREAKFASTTITLES = new String[breakfast.size()];
+        for (int i = 0; i < breakfast.size(); i++) {
+            BREAKFASTTITLES[i] = (String) breakfast.get(i).getElement().text();
+        }
+
+        LUNCHTITLES = new String[lunch.size()];
+        for (int i = 0; i < lunch.size(); i++) {
+            LUNCHTITLES[i] = (String) lunch.get(i).getElement().text();
+        }
+
+        DINNERTITLES = new String[dinner.size()];
+        for (int i = 0; i < dinner.size(); i++) {
+            DINNERTITLES[i] = (String) dinner.get(i).getElement().text();
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
         mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerViewDining); // Assigning the RecyclerView Object to the xml View
