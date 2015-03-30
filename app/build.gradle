@@ -41,6 +41,8 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0+'
     //BetterPickers, needs to be upgraded to 1.5.5
     compile 'org.jraf:android-switch-backport:1.4.0@aar'
+        //used in sample
+    compile 'joda-time:joda-time:2.1'
 
     //compile 'com.github.yoojia:betterpickers:1.5.3'
 

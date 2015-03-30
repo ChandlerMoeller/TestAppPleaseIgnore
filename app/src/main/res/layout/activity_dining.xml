@@ -72,7 +72,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
                             android:fontFamily="sans-serif-medium"
-                            android:text="Crown/Merrill Dining Hall"
+                            android:text="Crown/Merrill"
                             android:textColor="#FFFFFF"
                             android:textSize="36sp"
 
