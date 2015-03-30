@@ -43,7 +43,7 @@ public class MainActivity extends ActionBarActivity {
     ////int ICONS[] = {R.drawable.ic_launcher, R.drawable.ic_dining, R.drawable.ic_bus, R.drawable.ic_map, R.drawable.ic_calendar, R.drawable.ic_myucsc, R.drawable.ic_myucsc, R.drawable.piazza};
 
     String TITLES[] =  {"youCSC","Dining","Bus Routes","Campus Map","Event Calendar"};
-    int ICONS[] = {R.drawable.ic_launcher, R.drawable.ic_dining, R.drawable.ic_bus, R.drawable.ic_map, R.drawable.ic_calendar};
+    int ICONS[] = {R.drawable.ic_launcherslug, R.drawable.ic_dining, R.drawable.ic_bus, R.drawable.ic_map, R.drawable.ic_calendar};
 
     String TITLES2[] = {"myUCSC","eCommons","Piazza"};
     int ICONS2[] = {R.drawable.ic_myucsc, R.drawable.ic_myucsc, R.drawable.piazza};
@@ -55,7 +55,7 @@ public class MainActivity extends ActionBarActivity {
 
     String NAME = "youCSC";
     String EMAIL = "An unofficial UCSC Application";
-    int PROFILE = R.drawable.ic_launcher;
+    int PROFILE = R.drawable.ic_launcherslug;
 
     private Toolbar toolbar;
 
@@ -150,6 +150,15 @@ public class MainActivity extends ActionBarActivity {
                             if (browserIntent3.resolveActivity(getPackageManager()) != null) {
                                 startActivity(browserIntent3);
                             }
+                            break;
+                        case 12:
+                            Drawer.closeDrawers();
+                            break;
+                        case 13:
+                            Drawer.closeDrawers();
+                            break;
+                        case 14:
+                            Drawer.closeDrawers();
                             break;
                         default:
                             break;

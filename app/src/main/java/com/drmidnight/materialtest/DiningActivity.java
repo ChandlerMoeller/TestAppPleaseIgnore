@@ -3,8 +3,10 @@ package com.drmidnight.materialtest;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.DialogFragment;
+import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.StrictMode;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -18,17 +20,29 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.DatePicker;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.TimeZone;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 
-public class DiningActivity extends ActionBarActivity {
+public class DiningActivity extends ActionBarActivity  {
 
     private Toolbar toolbar;
+
+
+    ProgressBar progressBar1, progressBar2,
+            progressBar3, progressBar4, progressBar5;
+
+    //CountThread countThread1, countThread2, countThread3, countThread4, countThread5;
+    ExecutorService executorService = null;
 
 
     Calendar c = Calendar.getInstance(TimeZone.getDefault());
@@ -47,7 +61,7 @@ public class DiningActivity extends ActionBarActivity {
     String BREAKFASTTITLES[];
     int BREAKFASTICONS[] = {R.drawable.ic_launcher};
     String BREAKFASTNAME = "Breakfast";
-    String BREAKFASTEMAIL = "Breakfast Hours will go here";
+    String BREAKFASTEMAIL = "7:15am to 11:00am";
     int BREAKFASTPROFILE = R.drawable.ic_launcher;
 
     RecyclerView mRecyclerView2;                           // Declaring RecyclerView
@@ -56,7 +70,7 @@ public class DiningActivity extends ActionBarActivity {
     String LUNCHTITLES[] =  {"LunchFood1","Food2","Food3","Food4","Food5"};
     int LUNCHICONS[] = {R.drawable.ic_launcher, R.drawable.ic_dining, R.drawable.ic_bus, R.drawable.ic_map, R.drawable.ic_calendar};
     String LUNCHNAME = "Lunch";
-    String LUNCHEMAIL = "Lunch Hours will go here";
+    String LUNCHEMAIL = "12:00pm to 2:00pm";
     int LUNCHPROFILE = R.drawable.ic_launcher;
 
     RecyclerView mRecyclerView3;                           // Declaring RecyclerView
@@ -65,8 +79,15 @@ public class DiningActivity extends ActionBarActivity {
     String DINNERTITLES[] =  {"Food1","Food2","DinnerFood3","Food4","Food5"};
     int DINNERICONS[] = {R.drawable.ic_launcher, R.drawable.ic_dining, R.drawable.ic_bus, R.drawable.ic_map, R.drawable.ic_calendar};
     String DINNERNAME = "Dinner";
-    String DINNEREMAIL = "Dinner Hours will go here";
+    String DINNEREMAIL = "5:00pm to 8:00pm";
     int DINNERPROFILE = R.drawable.ic_launcher;
+
+    //EDDIE's code implementation
+    ArrayList<com.drmidnight.materialtest.MenuItem> breakfast;
+    ArrayList<com.drmidnight.materialtest.MenuItem> lunch;
+    ArrayList<com.drmidnight.materialtest.MenuItem> dinner;
+    com.drmidnight.materialtest.Menu menu;
+
 
 
 
@@ -90,19 +111,7 @@ public class DiningActivity extends ActionBarActivity {
         });
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+/*
         //EDDIE's code implementation
         ArrayList<com.drmidnight.materialtest.MenuItem> breakfast;
         breakfast = new ArrayList<com.drmidnight.materialtest.MenuItem>();
@@ -111,6 +120,31 @@ public class DiningActivity extends ActionBarActivity {
         ArrayList<com.drmidnight.materialtest.MenuItem> dinner;
         dinner = new ArrayList<com.drmidnight.materialtest.MenuItem>();
         com.drmidnight.materialtest.Menu menu;
+*/
+
+        breakfast = new ArrayList<com.drmidnight.materialtest.MenuItem>();
+        lunch = new ArrayList<com.drmidnight.materialtest.MenuItem>();
+        dinner = new ArrayList<com.drmidnight.materialtest.MenuItem>();
+
+
+        ////DiningOperation mTask = new DiningOperation();
+        ////mTask.execute("abc","10","Hello world");
+
+
+            //countThread1 = new CountThread(progressBar1);
+            //countThread2 = new CountThread(progressBar2);
+            //countThread3 = new CountThread(progressBar3);
+            //countThread4 = new CountThread(progressBar4);
+            //countThread5 = new CountThread(progressBar5);
+
+        //executorService = Executors.newFixedThreadPool(1);
+        //executorService.execute(countThread1);
+        //executorService.execute(countThread2);
+        //executorService.execute(countThread3);
+        //executorService.execute(countThread4);
+        //executorService.execute(countThread5);
+
+
         try {
 
             // Remove this
@@ -125,7 +159,7 @@ public class DiningActivity extends ActionBarActivity {
             breakfast = menu.getBreakfast();
             lunch = menu.getLunch();
             dinner = menu.getDinner();
-            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.CS);
+            menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.CS);
             //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.PK);
             //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.EO);
             //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.NT);
@@ -155,18 +189,9 @@ public class DiningActivity extends ActionBarActivity {
 
 
 
-
-
-
-
-
-
-
-
-
         mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerViewDining); // Assigning the RecyclerView Object to the xml View
 
-        mRecyclerView.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
+        mRecyclerView.setHasFixedSize(false);                            // Letting the system know that the list objects are of fixed size
 
         mAdapter = new MyDiningListAdapter(BREAKFASTTITLES,BREAKFASTICONS,SUBTITLES,BREAKFASTNAME,BREAKFASTEMAIL,BREAKFASTPROFILE,this);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
         // And passing the titles,icons,header view name, header view email,
@@ -260,7 +285,7 @@ public class DiningActivity extends ActionBarActivity {
 
         mRecyclerView2 = (RecyclerView) findViewById(R.id.RecyclerViewDining2); // Assigning the RecyclerView Object to the xml View
 
-        mRecyclerView2.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
+        mRecyclerView2.setHasFixedSize(false);                            // Letting the system know that the list objects are of fixed size
 
         mAdapter2 = new MyDiningListAdapter(LUNCHTITLES,LUNCHICONS,SUBTITLES,LUNCHNAME,LUNCHEMAIL,LUNCHPROFILE,this);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
         // And passing the titles,icons,header view name, header view email,
@@ -356,7 +381,7 @@ public class DiningActivity extends ActionBarActivity {
 
         mRecyclerView3 = (RecyclerView) findViewById(R.id.RecyclerViewDining3); // Assigning the RecyclerView Object to the xml View
 
-        mRecyclerView3.setHasFixedSize(true);                            // Letting the system know that the list objects are of fixed size
+        mRecyclerView3.setHasFixedSize(false);                            // Letting the system know that the list objects are of fixed size
 
         mAdapter3 = new MyDiningListAdapter(DINNERTITLES,DINNERICONS,SUBTITLES,DINNERNAME,DINNEREMAIL,DINNERPROFILE,this);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
         // And passing the titles,icons,header view name, header view email,
@@ -437,13 +462,159 @@ public class DiningActivity extends ActionBarActivity {
         mRecyclerView3.setLayoutManager(mLayoutManager3);                 // Setting the layout Manager
 
 
-
-
-
-
-
-
     }
+
+
+
+
+
+
+
+
+/*
+
+    public class CountThread extends Thread{
+
+        ProgressBar progressBar;
+        final int MAX_PROGRESS = 10;
+        int progress;
+
+        CountThread(ProgressBar progressBar){
+            this.progressBar = progressBar;
+            progress = MAX_PROGRESS;
+        }
+
+        @Override
+        public void run() {
+
+            for(int i=0; i<MAX_PROGRESS; i++){
+                progress--;
+                DiningActivity.this.runOnUiThread(new Runnable(){
+                    @Override
+                    public void run() {
+                        progressBar.setProgress(progress);
+                        try {
+                            menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.CM);
+                            breakfast = menu.getBreakfast();
+                            lunch = menu.getLunch();
+                            dinner = menu.getDinner();
+                            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.CS);
+                            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.PK);
+                            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.EO);
+                            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.NT);
+
+                            BREAKFASTTITLES = new String[breakfast.size()];
+                            for (int i = 0; i < breakfast.size(); i++) {
+                                BREAKFASTTITLES[i] = (String) breakfast.get(i).getElement().text();
+                            }
+
+                            mRecyclerView = (RecyclerView) findViewById(R.id.RecyclerViewDining); // Assigning the RecyclerView Object to the xml View
+
+                            mRecyclerView.setHasFixedSize(false);                            // Letting the system know that the list objects are of fixed size
+
+                            mAdapter = new MyDiningListAdapter(BREAKFASTTITLES,BREAKFASTICONS,SUBTITLES,BREAKFASTNAME,BREAKFASTEMAIL,BREAKFASTPROFILE,DiningActivity.this);       // Creating the Adapter of MyAdapter class(which we are going to see in a bit)
+                            // And passing the titles,icons,header view name, header view email,
+                            // and header view profile picture
+
+                            mRecyclerView.setAdapter(mAdapter);                              // Setting the adapter to RecyclerView
+
+                            final GestureDetector mGestureDetector = new GestureDetector(DiningActivity.this, new GestureDetector.SimpleOnGestureListener() {
+
+                                @Override public boolean onSingleTapUp(MotionEvent e) {
+                                    return true;
+                                }
+
+                            });
+
+
+                            mRecyclerView.addOnItemTouchListener(new RecyclerView.OnItemTouchListener() {
+                                @Override
+                                public boolean onInterceptTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
+                                    View child = recyclerView.findChildViewUnder(motionEvent.getX(), motionEvent.getY());
+
+
+                                    if (child != null && mGestureDetector.onTouchEvent(motionEvent)) {
+                                        Toast.makeText(DiningActivity.this, "The Item Clicked is: " + recyclerView.getChildPosition(child), Toast.LENGTH_SHORT).show();
+
+                                        switch (recyclerView.getChildPosition(child)) {
+                                            case 0:
+                                                //This is the header
+                                                break;
+                                            case 1:
+                                                break;
+                                            case 2:
+                                                break;
+                                            case 3:
+
+                                                break;
+                                            case 4:
+
+                                                break;
+                                            case 5:
+
+                                                break;
+                                            case 6:
+                                                //This is a line
+                                                break;
+                                            case 7:
+                                                //This is a subtitle
+                                                break;
+                                            case 8:
+
+                                                break;
+                                            case 9:
+
+                                                break;
+                                            case 10:
+
+                                                break;
+                                            default:
+                                                break;
+                                        }
+
+                                        return true;
+
+                                    }
+
+                                    return false;
+                                }
+
+                                @Override
+                                public void onTouchEvent(RecyclerView recyclerView, MotionEvent motionEvent) {
+
+                                }
+                            });
+
+
+                            mLayoutManager = new LinearLayoutManager(DiningActivity.this);                 // Creating a layout Manager
+
+                            mRecyclerView.setLayoutManager(mLayoutManager);                 // Setting the layout Manager
+                        } catch (IOException e) {
+                            e.printStackTrace();
+                        }
+                    }});
+
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException e) {
+// TODO Auto-generated catch block
+                    e.printStackTrace();
+                }
+            }
+
+        }
+    }
+*/
+
+
+
+
+
+
+
+
+
+
 
 
     @Override

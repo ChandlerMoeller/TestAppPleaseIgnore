@@ -12,6 +12,27 @@
         <item name="android:colorControlNormal">@color/slug_yellow</item>
 
         <item name="android:activatedBackgroundIndicator">@drawable/activated_background</item>
+
+        <item name="android:windowTranslucentStatus">true</item>
+
+
+
+
+
+        <item name="android:spinnerDropDownItemStyle">@style/YourCustomDropDownItemStyle</item>
+    </style>
+
+
+
+    <style name="YourCustomDropDownItemStyle" parent="@android:style/Widget.Holo.DropDownItem.Spinner">
+        <item name="android:textAppearance">@style/YourCustomDropDownItemTextStyle</item>
+    </style>
+
+    <style name="YourCustomDropDownItemTextStyle" parent="@android:style/Widget">
+        <item name="android:textColor">#fff</item>
+
+        <item name="android:background">@color/dining_greenmain</item>
+        <!-- Here you can set the color and other text attributes -->
     </style>
 
 <!--

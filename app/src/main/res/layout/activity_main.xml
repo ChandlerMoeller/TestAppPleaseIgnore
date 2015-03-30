@@ -8,7 +8,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:elevation="7sp"
-
+    android:fitsSystemWindows="false"
     >
 
     <!--tools:context=".MainActivity"-->
@@ -20,7 +20,10 @@
 
         <include
             android:id="@+id/tool_bar"
-            layout="@layout/tool_bar"></include>
+            android:fitsSystemWindows="false"
+            layout="@layout/tool_bar">
+
+            </include>
 
 
         <FrameLayout
@@ -33,7 +36,9 @@
                 xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#8ae4e4e4">
+                android:background="#f3f3f3">
+
+                <!--android:background="#8ae4e4e4"-->
 
                 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
                     android:id="@+id/tableLayout1"
@@ -220,7 +225,7 @@
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/RecyclerView"
-        android:layout_width="320dp"
+        android:layout_width="304dp"
         android:layout_height="match_parent"
         android:layout_gravity="left"
         android:background="#ffffff"

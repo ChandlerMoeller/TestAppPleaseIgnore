@@ -2,4 +2,25 @@
 <resources>
     <color name="slug_yellow">#fff1b521</color>
     <color name="slug_blue">#ff00458c</color>
+
+    <color name="myucsc_buttonred">#f2dede</color>
+    <color name="myucsc_beigelightforeground">#f9f8f2</color>
+    <color name="myucsc_beigedark">#ece9d8</color>
+    <color name="myucsc_beigelight">#f2f0e4</color>
+    <color name="myucsc_buttonyellow">#e4c820</color>
+
+    <color name="myucscmain_blue">#b4cfed</color>
+    <color name="myucscmain_bluesubbar">#cadbe8</color>
+
+    <color name="myucscstudentcenter_blue">#7382b5</color>
+    <color name="myucscstudentcenter_bluesubbar">#d6dfef</color>
+
+    <color name="ecommons_orangebox">#eeddc4</color>
+    <color name="ecommons_gray1box">#f9f9f9</color>
+    <color name="ecommons_gray2box">#f3f3f3</color>
+
+    <color name="dining_greenmain">#92b44f</color>
+    <color name="dining_greensubbar">#d6e4bd</color>
+    <color name="dining_greenlight">#e4ecd3</color>
+    <color name="dining_beigemenu">#fdf8dd</color>
 </resources>

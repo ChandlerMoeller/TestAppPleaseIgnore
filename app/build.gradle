@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.drmidnight.materialtest"
-        minSdkVersion 14
+        minSdkVersion 16
         targetSdkVersion 21
         versionCode 1
         versionName "1.0"
@@ -19,6 +19,13 @@ android {
     }
 }
 
+repositories {
+    jcenter()
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
@@ -27,5 +34,18 @@ dependencies {
     compile 'com.android.support:cardview-v7:21.0.3'
     compile 'com.android.support:palette-v7:21.0.3'
     compile 'de.hdodenhof:circleimageview:1.2.1'
+    //Jsoup
     compile 'org.jsoup:jsoup:1.8.1'
+    //Material Design Library
+    compile 'com.github.navasmdc:MaterialDesign:1.+@aar'
+    compile 'com.nineoldandroids:library:2.4.0+'
+    //BetterPickers, needs to be upgraded to 1.5.5
+    compile 'org.jraf:android-switch-backport:1.4.0@aar'
+
+    //compile 'com.github.yoojia:betterpickers:1.5.3'
+
+    compile 'com.doomonafireball.betterpickers:library:1.5.4'
+
+    //compile 'com.derekbrameyer.android-betterpickers:library:1.5.4'
 }
+
