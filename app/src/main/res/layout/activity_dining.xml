@@ -34,13 +34,12 @@
             android:layout_marginTop="4dp"
 
             android:orientation="vertical"
-
             >
 
 
             <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/tableLayout3"
-                style="@style/largecard"
+                style="@style/diningheadercard"
                 android:weightSum="1"
                 card_view:cardPreventCornerOverlap="false">
 
@@ -49,51 +48,83 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/imageView"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_gravity="center_horizontal"
-                        android:scaleType="fitXY"
-                        android:src="@drawable/scenicwetgrass" />
-
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true"
-                        android:orientation="vertical"
-                        android:layout_marginBottom="16dp">
+                        android:layout_height="match_parent"
+                        android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/name"
-                            android:layout_width="wrap_content"
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="180dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:id="@+id/imageView"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="center_horizontal"
+                                android:scaleType="fitXY"
+                                android:src="@drawable/scenicwetgrass" />
+
+                            <TextView
+                                android:id="@+id/name"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_alignParentLeft="true"
+                                android:layout_alignParentStart="true"
+                                android:layout_marginBottom="16dp"
+                                android:layout_marginLeft="16dp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="Crown/Merrill Dining Menu"
+                                android:textColor="#FFFFFF"
+                                android:textSize="24sp"
+                                android:textStyle="normal"
+
+                                />
+
+                        </RelativeLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:fontFamily="sans-serif-medium"
-                            android:text="Crown/Merrill"
-                            android:textColor="#FFFFFF"
-                            android:textSize="36sp"
+                            android:layout_alignParentBottom="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true"
+                            android:layout_marginBottom="16dp"
+                            android:orientation="vertical">
 
-                            android:textStyle="normal"
+                            <TextView
+                                android:id="@+id/dateintop"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="16dp"
+                                android:fontFamily="sans-serif-medium"
+                                android:text="No Date Selected"
+                                android:textColor="#000"
+                                android:textSize="14sp"
+                                android:textStyle="normal"
 
-                            />
+                                />
 
-                        <TextView
-                            android:id="@+id/email"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="16dp"
-                            android:layout_marginTop="5dp"
-                            android:fontFamily="sans-serif"
-                            android:text="7:15am to 8:00pm"
-                            android:textColor="#FFFFFF"
-                            android:textSize="14sp"
 
-                            android:textStyle="normal"
+                            <TextView
+                                android:id="@+id/email"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="16dp"
+                                android:layout_marginTop="5dp"
+                                android:fontFamily="sans-serif"
+                                android:text="Open from 7:15am to 8:00pm"
+                                android:textColor="#000"
+                                android:textSize="14sp"
+                                android:textStyle="normal"
 
-                            />
+                                />
+
+                        </LinearLayout>
+
                     </LinearLayout>
 
                     <View

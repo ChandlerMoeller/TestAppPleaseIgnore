@@ -40,9 +40,10 @@ import com.gc.materialdesign.views.ButtonFloat;
 public class DiningActivity extends ActionBarActivity implements CalendarDatePickerDialog.OnDateSetListener {
 
     private static final String FRAG_TAG_DATE_PICKER = "fragment_date_picker_name";
-    
+
     private Toolbar toolbar;
     private ButtonFloat buttonFloat;
+    private TextView dateintop;
 
     Calendar c = Calendar.getInstance(TimeZone.getDefault());
     int startYear = c.get(Calendar.YEAR);
@@ -449,7 +450,10 @@ public class DiningActivity extends ActionBarActivity implements CalendarDatePic
 
 
         //FAB STUFF
+        dateintop = (TextView) findViewById(R.id.dateintop);
         buttonFloat = (ButtonFloat) findViewById(R.id.buttonFloat);
+
+        dateintop.setText(startMonth + "/" + startDay + "/" + startYear);
 
         buttonFloat.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -467,7 +471,33 @@ public class DiningActivity extends ActionBarActivity implements CalendarDatePic
 
     @Override
     public void onDateSet(CalendarDatePickerDialog dialog, int year, int monthOfYear, int dayOfMonth) {
-        //text.setText("Year: " + year + "\nMonth: " + monthOfYear + "\nDay: " + dayOfMonth);
+        dateintop.setText(monthOfYear+1 + "/" + dayOfMonth + "/" + year);
+
+
+        try {
+
+            // Remove this
+            StrictMode.ThreadPolicy policy = new
+                    StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+
+
+
+            menu = new com.drmidnight.materialtest.Menu(dayOfMonth, monthOfYear+1, year, com.drmidnight.materialtest.Menu.CM);
+            breakfast = menu.getBreakfast();
+            lunch = menu.getLunch();
+            dinner = menu.getDinner();
+            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.CS);
+            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.PK);
+            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.EO);
+            //menu = new com.drmidnight.materialtest.Menu(startDay, startMonth, startYear, com.drmidnight.materialtest.Menu.NT);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        mAdapter = new MyDiningListAdapter(BREAKFASTTITLES,BREAKFASTICONS,SUBTITLES,BREAKFASTNAME,BREAKFASTEMAIL,BREAKFASTPROFILE,this);
+        mRecyclerView.setAdapter(mAdapter);
     }
 
     @Override
@@ -497,12 +527,6 @@ public class DiningActivity extends ActionBarActivity implements CalendarDatePic
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_Changedate) {
-
-            return true;
-        }
 
         return super.onOptionsItemSelected(item);
     }
